@@ -104,6 +104,8 @@ impl Blockchain for AnyBlockchain {
     fn estimate_fee(&self, target: usize) -> Result<FeeRate, Error> {
         maybe_await!(impl_inner_method!(self, estimate_fee, target))
     }
+
+    fn get_total_calls(&self) -> usize { 42 }
 }
 
 #[maybe_async]

@@ -95,9 +95,7 @@ pub trait Blockchain: WalletSync + GetHeight + GetTx + GetBlockHash {
     fn broadcast(&self, tx: &Transaction) -> Result<(), Error>;
     /// Estimate the fee rate required to confirm a transaction in a given `target` of blocks
     fn estimate_fee(&self, target: usize) -> Result<FeeRate, Error>;
-    fn get_total_calls(&self) -> usize {
-        return 2;
-    }
+    fn get_total_calls(&self) -> usize;
 }
 
 /// Trait for getting the current height of the blockchain.
@@ -351,6 +349,8 @@ impl<T: Blockchain> Blockchain for Arc<T> {
     fn estimate_fee(&self, target: usize) -> Result<FeeRate, Error> {
         maybe_await!(self.deref().estimate_fee(target))
     }
+
+    fn get_total_calls(&self) -> usize { 0 }
 }
 
 #[maybe_async]

@@ -245,6 +245,8 @@ impl Blockchain for CompactFiltersBlockchain {
         // TODO
         Ok(FeeRate::default())
     }
+
+    fn get_total_calls(&self) -> usize { 42 }
 }
 
 impl GetHeight for CompactFiltersBlockchain {
