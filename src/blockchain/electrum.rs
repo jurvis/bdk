@@ -78,6 +78,10 @@ impl Blockchain for ElectrumBlockchain {
             self.client.estimate_fee(target)? as f32
         ))
     }
+
+    fn get_total_calls(&self) -> usize {
+        self.client.calls_made().unwrap_or(0)
+    }
 }
 
 impl Deref for ElectrumBlockchain {
