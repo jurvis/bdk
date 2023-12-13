@@ -80,7 +80,7 @@ impl Blockchain for ElectrumBlockchain {
     }
 
     fn get_total_calls(&self) -> usize {
-        self.client.calls_made().unwrap_or(0)
+        self.client.calls_made().unwrap_or(1)
     }
 }
 

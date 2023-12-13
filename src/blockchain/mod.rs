@@ -96,7 +96,7 @@ pub trait Blockchain: WalletSync + GetHeight + GetTx + GetBlockHash {
     /// Estimate the fee rate required to confirm a transaction in a given `target` of blocks
     fn estimate_fee(&self, target: usize) -> Result<FeeRate, Error>;
     fn get_total_calls(&self) -> usize {
-        return 0;
+        return 2;
     }
 }
 
