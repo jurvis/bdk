@@ -173,7 +173,7 @@ impl Blockchain for RpcBlockchain {
         Ok(FeeRate::from_sat_per_vb((sat_per_kb / 1000f64) as f32))
     }
 
-    async fn get_total_calls(&self) -> usize { 42 }
+    fn get_total_calls(&self) -> usize { 42 }
 }
 
 impl GetTx for RpcBlockchain {

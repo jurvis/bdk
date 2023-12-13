@@ -86,7 +86,7 @@ impl Blockchain for EsploraBlockchain {
         )?))
     }
 
-    async fn get_total_calls(&self) -> usize { 42 }
+    fn get_total_calls(&self) -> usize { 42 }
 }
 
 impl Deref for EsploraBlockchain {
